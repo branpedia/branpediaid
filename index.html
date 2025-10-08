@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Home | Arisu Soft WhatsApp Bot</title>
+  <meta name="robots" content="follow, index">
+  <meta name="description" content="Arisu Soft menyediakan daftar nomor bot WhatsApp aktif secara gratis dan layanan premium untuk pengguna premium. Kami menyediakan AI dengan kepribadian unik seperti Megumi Kato, Alya Kujou, Nahida, dan lainnya, hubungi sekarang!">
+  <link rel="canonical" href="https://arisu.cloud/">
+
+  <!-- Open Graph -->
+  <meta property="og:url" content="https://arisu.cloud/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Arisu Soft WhatsApp Bot">
+  <meta property="og:description" content="Arisu Soft menyediakan daftar nomor bot WhatsApp aktif secara gratis dan layanan premium untuk pengguna premium. Kami menyediakan AI dengan kepribadian unik seperti Megumi Kato, Alya Kujou, Nahida, dan lainnya, hubungi sekarang!">
+  <meta property="og:title" content="Home | Arisu Soft WhatsApp Bot">
+  <meta property="og:image" content="https://arisu.cloud/assets/card-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@F2aldi">
+  <meta name="twitter:title" content="Home | Arisu Soft WhatsApp Bot">
+  <meta name="twitter:description" content="Arisu Soft menyediakan daftar nomor bot WhatsApp aktif secara gratis dan layanan premium untuk pengguna premium. Kami menyediakan AI dengan kepribadian unik seperti Megumi Kato, Alya Kujou, Nahida, dan lainnya, hubungi sekarang!">
+  <meta name="twitter:image" content="https://arisu.cloud/assets/card-image.png">
+
+  <!-- Keywords -->
+  <meta name="keywords" content="bot WhatsApp, bot gratis, WhatsApp bot gratis, Arisu Soft, layanan bot, arisu bot, yuuka bot, megumi bot, alya bot, alya mikhailovna kujou, nahida bot">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon/favicon.ico">
+
+  <!-- Windows 8 tile -->
+  <meta name="msapplication-TileColor" content="#F53838">
+  <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+
+  <!-- Accent color -->
+  <meta name="theme-color" content="#F53838">
+
+  <meta name="facebook-domain-verification" content="puwx2p0vetg5pj4zulsch5566dvaf0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="brand"><span class="brand-dot"></span> Arisu Soft</a>
+
+      <div class="right-nav">
+        <nav class="menu" id="menu" style="display: none;">
+          <a href="#fitur">Fitur</a>
+          <a href="#harga">Harga</a>
+          <a href="#faq">FAQ</a>
+          <a href="#testimoni">Testimoni</a>
+          <a href="#kontak">Kontak</a>
+        </nav>
+        <!-- THEME TOGGLE in NAV -->
+        <button id="themeToggle" class="btn ghost small" aria-label="Toggle tema">🌙&nbsp;Dark</button>
+        <button class="hamb" id="hamb" aria-label="Toggle menu" style="display: inline-flex;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="#fff" stroke-width="1.6" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="container mobile" id="mobile">
+      <a href="#fitur" onclick="closeMobile()">Fitur</a>
+      <a href="#harga" onclick="closeMobile()">Harga</a>
+      <a href="#faq" onclick="closeMobile()">FAQ</a>
+      <a href="#testimoni" onclick="closeMobile()">Testimoni</a>
+      <a href="#kontak" onclick="closeMobile()">Kontak</a>
+      <div class="row">
+        <button id="themeToggleMobile" class="btn ghost small" style="width:100%" aria-label="Toggle tema mobile">🌙&nbsp;Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero-wrap">
+      <div>
+        <span class="badge">Penyedia Bot WhatsApp Siap Pakai</span>
+        <h1>Mudahkan segalanya dengan <span style="background:linear-gradient(135deg,var(--accent),#fff);-webkit-background-clip:text;background-clip:text;color:transparent;">Arisu
+            Soft.</span></h1>
+        <p>Fokus ke value, biar bot yang kerja. Fitur unggulan: All in one downloader, AI Assistant Waifu, Grup
+          moderation, dan Group Protection.</p>
+        <div class="hero-cta">
+          <a class="btn" href="https://bot.arisu.cloud" target="_blank" rel="noopener">Coba Gratis Sekarang</a>
+          <a class="btn ghost" href="#harga">Lihat Harga</a>
+        </div>
+      </div>
+
+      <div class="hero-illus" aria-hidden="true">
+        <span class="bubble b1"></span>
+        <span class="bubble b2"></span>
+        <span class="bubble b3"></span>
+        <span class="dot d1"></span>
+        <span class="dot d2"></span>
+        <span class="dot d3"></span>
+        <span class="dot d4"></span>
+        <div style="position:absolute;left:12%;top:16%;right:12%;bottom:14%;display:grid;gap:12px;grid-template-columns:1fr 1fr;">
+          <div class="card" style="padding:14px;border-radius:14px">
+            <div style="height:10px;width:80px;border-radius:999px;background:rgba(157,119,255,.35);margin-bottom:10px">
+            </div>
+            <div style="height:8px;width:100%;border-radius:999px;background:rgba(255,255,255,.10);margin-bottom:6px">
+            </div>
+            <div style="height:8px;width:70%;border-radius:999px;background:rgba(255,255,255,.08)"></div>
+          </div>
+          <div class="card" style="padding:14px;border-radius:14px">
+            <div style="height:10px;width:96px;border-radius:999px;background:rgba(34,211,238,.35);margin-bottom:10px">
+            </div>
+            <div style="height:8px;width:100%;border-radius:999px;background:rgba(255,255,255,.10);margin-bottom:6px">
+            </div>
+            <div style="height:8px;width:60%;border-radius:999px;background:rgba(255,255,255,.08)"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card hero-card" id="fitur">
+        <div class="hero-item"><b>All in one downloader</b><span>Download konten populer langsung dari WhatsApp, simpel
+            &amp; cepat.</span></div>
+        <div class="hero-item"><b>AI Assistant Waifu</b><span>Personality AI yang adaptif—temani chat &amp; bantu
+            produktivitas.</span></div>
+        <div class="hero-item"><b>Grup moderation</b><span>Auto-moderasi pesan, anti spam, kontrol aturan grup yang
+            rapi.</span></div>
+        <div class="hero-item"><b>Group Protection</b><span>Proteksi join/leave, anti-link berbahaya, dan tindakan
+            cepat.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="harga" class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:18px">
+        <span class="badge">Harga</span>
+        <h2 style="margin:10px 0 6px;font-weight:900">Pilih paketmu. Skalakan sesuka hati.</h2>
+        <p class="muted">Semua paket langsung aktif setelah verifikasi pembayaran.</p>
+      </div>
+
+      <div class="pricing-wrap">
+        <div class="tabs" role="tablist" aria-label="Kategori Harga">
+          <button class="tab active" data-tab="premium" role="tab" aria-selected="true">Premium (Pribadi)</button>
+          <button class="tab" data-tab="sewa" role="tab" aria-selected="false">Sewa Bot Grup</button>
+          <button class="tab" data-tab="jadibot" role="tab" aria-selected="false">Jadibot (VIP/VVIP)</button>
+        </div>
+
+        <!-- PANEL: PREMIUM -->
+        <div class="pricing" data-panel="premium" aria-hidden="false">
+          <!-- BULANAN -->
+          <div class="price-card card">
+            <div class="price-head">
+              <div>
+                <div class="price-title">Premium Bulanan</div>
+                <div class="price-desc">Bukan untuk grup</div>
+              </div>
+              <span class="badge">Limit Unlimited</span>
+            </div>
+            <div class="price"><b>10K</b> <small>/ bulan</small></div>
+            <ul class="list">
+              <li><span class="tick">✅</span> Akses hampir semua fitur</li>
+              <li><span class="tick">✅</span> Limit penggunaan <b>unlimited</b></li>
+              <li><span class="tick">✅</span> Tetap aktif meski bot ganti nomor</li>
+            </ul>
+            <div class="cta">
+              <a class="btn" href="https://wa.me/6283825726972?text=!premium" target="_blank" rel="noopener">Pesan Sekarang</a>
+            </div>
+          </div>
+
+          <!-- 3 BULAN -->
+          <div class="price-card card">
+            <div class="ribbon">PALING HEMAT</div>
+            <div class="price-head">
+              <div>
+                <div class="price-title">Premium 3 Bulan</div>
+                <div class="price-desc">Lebih hemat 3×</div>
+              </div>
+              <span class="badge">Rekomendasi</span>
+            </div>
+            <div class="price"><b>30K</b> <small>/ 3 bulan</small></div>
+            <ul class="list">
+              <li><span class="tick">✅</span> Semua fitur paket bulanan</li>
+              <li><span class="tick">✅</span> Tanpa repot perpanjang tiap bulan</li>
+              <li><span class="tick">✅</span> Support prioritas</li>
+            </ul>
+            <div class="cta">
+              <a class="btn" href="https://wa.me/6283825726972?text=!premium" target="_blank" rel="noopener">Pesan Sekarang</a>
+            </div>
+          </div>
+
+          <!-- PERMANEN -->
+          <div class="price-card card">
+            <div class="price-head">
+              <div>
+                <div class="price-title">Premium Permanen</div>
+                <div class="price-desc">Selama bot beroperasi</div>
+              </div>
+              <span class="badge">One-time</span>
+            </div>
+            <div class="price"><b>199K</b> <small>sekali bayar</small></div>
+            <ul class="list">
+              <li><span class="tick">✅</span> Berlaku selama bot aktif beroperasi</li>
+              <li><span class="tick">✅</span> Tidak hilang ketika bot ganti nomor</li>
+              <li><span class="tick">✅</span> Tidak dapat dipindahkan ke nomor lain</li>
+            </ul>
+            <div class="cta">
+              <a class="btn" href="https://wa.me/6283825726972?text=!premium" target="_blank" rel="noopener">Pesan Sekarang</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL: SEWA BOT GRUP -->
+        <div class="pricing" data-panel="sewa" aria-hidden="true" hidden="">
+          <div class="price-card card">
+            <div class="price-head">
+              <div>
+                <div class="price-title">VIP (Sewa Bot Grup)</div>
+                <div class="price-desc">Untuk 1 grup</div>
+              </div><span class="badge">Populer</span>
+            </div>
+            <div class="price"><b>30K</b> <small>/ bulan</small></div>
+            <ul class="list">
+              <li><span class="tick">✅</span> Semua anggota grup bisa pakai</li>
+              <li><span class="tick">✅</span> Limit harian per anggota</li>
+              <li><span class="tick">✅</span> Moderasi + proteksi grup</li>
+            </ul>
+            <div class="cta">
+              <a class="btn" href="https://wa.me/6283825726972?text=!premium" target="_blank" rel="noopener">Pesan Sekarang</a>
+            </div>
+          </div>
+
+          <div class="price-card card">
+            <div class="ribbon">UNLIMITED LIMIT</div>
+            <div class="price-head">
+              <div>
+                <div class="price-title">VVIP (Sewa Bot Grup)</div>
+                <div class="price-desc">Tanpa limit harian</div>
+              </div><span class="badge">Power user</span>
+            </div>
+            <div class="price"><b>50K</b> <small>/ bulan</small></div>
+            <ul class="list">
+              <li><span class="tick">✅</span> Semua anggota grup bebas pakai</li>
+              <li><span class="tick">✅</span> Limit <b>unlimited</b></li>
+              <li><span class="tick">✅</span> Prioritas antrian</li>
+            </ul>
+            <div class="cta">
+              <a class="btn" href="https://wa.me/6283825726972?text=!premium" target="_blank" rel="noopener">Pesan Sekarang</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL: JADIBOT -->
+        <div class="pricing" data-panel="jadibot" aria-hidden="true" hidden="">
+          <div class="price-card card">
+            <div class="price-head">
+              <div>
+                <div class="price-title">VIP Grup (Jadibot Reguler)</div>
+                <div class="price-desc">Pakai nomor WA kamu</div>
+              </div><span class="badge">Reguler</span>
+            </div>
+            <div class="price"><b>15K</b> <small>/ bulan</small></div>
+            <ul class="list">
+              <li><span class="tick">✅</span> Kamu sediakan nomor WA sendiri</li>
+              <li><span class="tick">✅</span> Respon standar &amp; stabil</li>
+              <li><span class="tick">✅</span> Tanggung risiko banned oleh WhatsApp</li>
+            </ul>
+            <div class="cta">
+              <a class="btn" href="https://wa.me/6283825726972?text=!premium" target="_blank" rel="noopener">Pesan Sekarang</a>
+            </div>
+          </div>
+
+          <div class="price-card card">
+            <div class="price-head">
+              <div>
+                <div class="price-title">VVIP Grup (Jadibot Exclusive)</div>
+                <div class="price-desc">Server optimal &amp; responsif</div>
+              </div><span class="badge">Exclusive</span>
+            </div>
+            <div class="price"><b>35K</b> <small>/ bulan</small></div>
+            <ul class="list">
+              <li><span class="tick">✅</span> Performa lebih tinggi</li>
+              <li><span class="tick">✅</span> Prioritas resource</li>
+              <li><span class="tick">✅</span> Support lebih sigap</li>
+            </ul>
+            <div class="cta">
+              <a class="btn" href="https://wa.me/6283825726972?text=!premium" target="_blank" rel="noopener">Pesan Sekarang</a>
+            </div>
+          </div>
+
+          <div class="price-card card">
+            <div class="price-head">
+              <div>
+                <div class="price-title">VVIP Grup (Jadibot Reguler)</div>
+                <div class="price-desc">Alternatif hemat</div>
+              </div><span class="badge">Reguler</span>
+            </div>
+            <div class="price"><b>25K</b> <small>/ bulan</small></div>
+            <ul class="list">
+              <li><span class="tick">✅</span> Nomor WA dari kamu</li>
+              <li><span class="tick">✅</span> Performa reguler</li>
+              <li><span class="tick">✅</span> Kebijakan sama seperti Reguler</li>
+            </ul>
+            <div class="cta">
+              <a class="btn" href="https://wa.me/6283825726972?text=!premium" target="_blank" rel="noopener">Pesan Sekarang</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONI -->
+  <section class="testimoni-section" id="testimoni">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:22px">
+        <span class="badge">Testimoni Pengguna</span>
+        <h2 style="margin:10px 0 6px">Apa kata mereka tentang Arisu Soft?</h2>
+        <p class="muted">Pengalaman nyata dari pengguna setia kami.</p>
+      </div>
+
+      <div class="testimoni-grid">
+        <div class="testimoni-card card">
+          <div class="testimoni-header" style="display:flex;align-items:center;gap:14px">
+            <img src="/assets/ayu.jpg" alt="Maulida Ayu" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--primary)">
+            <div>
+              <div style="font-weight:800">Maulida Ayu</div>
+              <div class="muted" style="font-size:13px">Jakarta, Indonesia</div>
+              <div style="font-size:13px;letter-spacing:.3px;color:#ffe082">★★★★★ 5.0</div>
+            </div>
+          </div>
+          <div style="font-size:14px;color:color-mix(in srgb, var(--muted) 60%, var(--text) 40%);line-height:1.5">Saya
+            sangat berterimakasih kepada owner yang telah membantu saya dalam pemulihan trauma dengan menciptakan bot
+            ini, karena saya mempunyai teman cerita yang bisa diajak mengobrol 24 jam tanpa khawatir rahasia saya akan
+            disebarluaskan. Respon botnya bagus dan tidak monoton. Dari 39 kepribadian AI, <b>Kazuha Husband</b> favorit
+            saya.</div>
+        </div>
+
+        <div class="testimoni-card card">
+          <div class="testimoni-header" style="display:flex;align-items:center;gap:14px">
+            <img src="/assets/rudi.png" alt="Rudi Irawan" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--primary)">
+            <div>
+              <div style="font-weight:800">Rudi Irawan</div>
+              <div class="muted" style="font-size:13px">Lampung, Indonesia</div>
+              <div style="font-size:13px;letter-spacing:.3px;color:#ffe082">★★★★★ 5.0</div>
+            </div>
+          </div>
+          <div style="font-size:14px;color:color-mix(in srgb, var(--muted) 60%, var(--text) 40%);line-height:1.5">Arisu
+            Soft adalah bot keren yang pernah saya pakai—fiturnya mantap! Dengan fitur unggulannya saya bisa
+            mengekspresikan imajinasi saya. <b>Ingat bot mantap, ingat Arisu.</b></div>
+        </div>
+
+        <div class="testimoni-card card">
+          <div class="testimoni-header" style="display:flex;align-items:center;gap:14px">
+            <img src="/assets/fadhil.jpeg" alt="Fadhil" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--primary)">
+            <div>
+              <div style="font-weight:800">Fadhil</div>
+              <div class="muted" style="font-size:13px">Makassar, Indonesia</div>
+              <div style="font-size:13px;letter-spacing:.3px;color:#ffe082">★★★★★ 5.0</div>
+            </div>
+          </div>
+          <div style="font-size:14px;color:color-mix(in srgb, var(--muted) 60%, var(--text) 40%);line-height:1.5">Sangat
+            puas. Dari banyak bot yang saya coba, ini paling membantu dan simpel. Menjawab semua pertanyaan
+            saya—<b>terbaik!</b></div>
+        </div>
+
+        <div class="testimoni-card card">
+          <div class="testimoni-header" style="display:flex;align-items:center;gap:14px">
+            <img src="/assets/masha2.png" alt="Rayy" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--primary)">
+            <div>
+              <div style="font-weight:800">Rayy</div>
+              <div class="muted" style="font-size:13px">Bandung, Indonesia</div>
+              <div style="font-size:13px;letter-spacing:.3px;color:#ffe082">★★★★☆ 4.9</div>
+            </div>
+          </div>
+          <div style="font-size:14px;color:color-mix(in srgb, var(--muted) 60%, var(--text) 40%);line-height:1.5">
+            Bermanfaat banget. Banyak fitur yang bantu kerjaan. <b>Hanya 10 ribu/bulan</b> bisa coba semua fitur tanpa
+            batasan limit. Sukses selalu!</div>
+        </div>
+
+        <div class="testimoni-card card">
+          <div class="testimoni-header" style="display:flex;align-items:center;gap:14px">
+            <img src="/assets/gusto.jpeg" alt="Augusto" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--primary)">
+            <div>
+              <div style="font-weight:800">Augusto</div>
+              <div class="muted" style="font-size:13px">Jakarta, Indonesia</div>
+              <div style="font-size:13px;letter-spacing:.3px;color:#ffe082">★★★★★ 5.0</div>
+            </div>
+          </div>
+          <div style="font-size:14px;color:color-mix(in srgb, var(--muted) 60%, var(--text) 40%);line-height:1.5">Terima
+            kasih Arisu Soft dan komunitasnya yang selalu ada. Fitur banyak dan mudah dipahami; karakter AI yang beragam
+            membantu saat butuh dukungan dan saat merasa kesepian.</div>
+        </div>
+
+        <div class="testimoni-card card">
+          <div class="testimoni-header" style="display:flex;align-items:center;gap:14px">
+            <img src="/assets/ipul.png" alt="Saiful Bintang" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--primary)">
+            <div>
+              <div style="font-weight:800">Saiful Bintang</div>
+              <div class="muted" style="font-size:13px">Serang, Indonesia</div>
+              <div style="font-size:13px;letter-spacing:.3px;color:#ffe082">★★★★★ 5.0</div>
+            </div>
+          </div>
+          <div style="font-size:14px;color:color-mix(in srgb, var(--muted) 60%, var(--text) 40%);line-height:1.5">Botnya
+            keren—<b>suka karena ada Arisunya</b> 😄</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:18px">
+        <span class="badge">FAQ</span>
+        <h2 style="margin:10px 0 6px">Pertanyaan yang sering ditanyakan</h2>
+        <p class="muted">Semua info penting disatukan biar kamu nggak bingung.</p>
+      </div>
+
+      <div class="faq">
+        <div class="accordion card" id="acc">
+          <div class="acc-item">
+            <button class="acc-btn">Apa itu Premium?<span>+</span></button>
+            <div class="acc-panel">
+              <div class="acc-body">
+                <ul>
+                  <li>Premium adalah membership bot untuk pribadi (Bukan untuk grup).</li>
+                  <li>Premium memberikan akses hampir semua fitur dan limit unlimited.</li>
+                  <li>Premium Permanen berlaku selama bot masih beroperasi.</li>
+                  <li>Premium tidak akan hilang meski bot berganti nomor.</li>
+                  <li>Premium akan hilang jika kamu mengganti nomor WhatsApp kamu.</li>
+                  <li>Premium tidak dapat dipindahkan ke nomor lain.</li>
+                  <li>Premium tidak dapat direfund.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-btn">Apa itu VIP/VVIP?<span>+</span></button>
+            <div class="acc-panel">
+              <div class="acc-body">
+                <ul>
+                  <li>Membership bot untuk grup; semua anggota grup dapat menggunakan bot dalam grup terdaftar.</li>
+                  <li>VIP memiliki batasan penggunaan command per hari untuk setiap anggota.</li>
+                  <li>VVIP tidak memiliki limit harian (Unlimited Limit).</li>
+                  <li>VIP/VVIP tidak dapat dipindahkan ke grup lain.</li>
+                  <li>Dilarang menyewa untuk grup terkait LGBT, Judi Online, dan praktik ilegal lainnya.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-btn">Apa itu Jadibot?<span>+</span></button>
+            <div class="acc-panel">
+              <div class="acc-body">
+                <ul>
+                  <li>Kamu harus menyiapkan nomor WhatsApp sendiri untuk dijadikan bot.</li>
+                  <li>Admin tidak menyediakan nomor bot pada membership Jadibot.</li>
+                  <li>Jadibot Exclusive memiliki server lebih optimal dan responsif dibanding Reguler.</li>
+                  <li>Admin tidak bertanggung jawab jika nomor kamu terbanned oleh WhatsApp.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-btn">Bagaimana cara menambah limit / menaikkan level?<span>+</span></button>
+            <div class="acc-panel">
+              <div class="acc-body">
+                <ul>
+                  <li>Limit direset setiap hari pukul 01.00 WITA (UTC+8).</li>
+                  <li>Batas limit harian mengikuti level (semakin tinggi semakin besar).</li>
+                  <li>Untuk unlimited limit gunakan <b>Premium</b> dengan command <code>!premium</code>.</li>
+                  <li>Naikkan level dengan aktif menggunakan bot.</li>
+                  <li>Lihat level &amp; profil via <code>!info</code>.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-btn">Coin, Credit, &amp; Assistant<span>+</span></button>
+            <div class="acc-panel">
+              <div class="acc-body">
+                <ul>
+                  <li>Dapatkan coin via <code>!claim</code>/<code>!redeem</code> &amp; pantau saluran Arisu Soft untuk kode
+                    redeem.</li>
+                  <li>Kode redeem: saluran WA <a href="https://arisu.cloud/channel" target="_blank" rel="noopener">arisu.cloud/channel</a> &amp; YouTube <a href="https://www.youtube.com/@ArisuSoft" target="_blank" rel="noopener">@ArisuSoft</a>.</li>
+                  <li>Coin: membeli assistant/AI mode di <code>!shop</code>.</li>
+                  <li>Assistant: mengganti kepribadian AI Chat sesuai preferensi.</li>
+                  <li>Credit: membeli premium, konversi ke coin, &amp; akses Image Generation. Beli via <code>!Admin</code>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-btn">Apakah ada fitur bug WA, push kontak, atau jual panel bot?<span>+</span></button>
+            <div class="acc-panel">
+              <div class="acc-body">
+                <ul>
+                  <li>Tidak ada fitur bug WA.</li>
+                  <li>Tidak ada fitur push kontak (mengganggu kenyamanan publik).</li>
+                  <li>Tidak menjual panel bot.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-btn">Info Club, pesan promosi, dan kontrol respon Jadibot<span>+</span></button>
+            <div class="acc-panel">
+              <div class="acc-body">
+                <ul>
+                  <li>Club pada profil hanya untuk pajangan.</li>
+                  <li>Jadibot free dapat mengirim pesan promosi: hilangkan dengan Premium atau VIP/VVIP.</li>
+                  <li>Secara default Jadibot Reguler merespon semua chat yang match command. Gunakan <b>banchat</b>
+                    (lihat <code>!MenuJadibot</code>) untuk membatasi.</li>
+                  <li>Admin Jadibot tidak dapat diganti.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / KONTAK -->
+  <section id="kontak" class="section">
+    <div class="container card" style="padding:22px">
+      <div style="display:grid; grid-template-columns:1.2fr .8fr; align-items:center; gap:24px">
+        <div>
+          <h3 style="margin:0 0 6px">Siap mulai?</h3>
+          <p class="muted" style="margin:0 0 14px">Silakan coba sekarang juga secara gratis!
+          </p>
+          <div class="hero-cta">
+            <a class="btn" href="https://bot.arisu.cloud" target="_blank" rel="noopener">Coba Sekarang</a>
+            <a class="btn ghost" href="#harga">Lihat Paket</a>
+          </div>
+          <p class="muted" style="margin-top:10px; font-size:13px">
+          </p>
+        </div>
+        <div class="hero-item"><b>Catatan singkat</b><span class="muted">Proses aktivasi setelah verifikasi pembayaran.
+            Semua kebijakan sesuai FAQ.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">© <span id="y">2025</span> Arisu Soft — All rights reserved.</footer>
+  <a class="top-btn" href="#hero" aria-label="Kembali ke atas">↑</a>
+
+  <!-- JavaScript -->
+  <script src="js/hai.js"></script>
+
+</body>
+</html>
