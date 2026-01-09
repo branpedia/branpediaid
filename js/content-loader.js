@@ -5,7 +5,15 @@ class ContentLoader {
             // Navigation
             nav: {
                 brand: "Branpedia ID",
-                menu: ["fitur", "harga", "faq", "testimoni", "kontak"]
+                menu: ["fitur", "harga", "faq", "testimoni", "kontak"],
+                chanel: {
+                    url: "https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H",
+                    text: "Chanel"
+                },
+                group: {
+                    url: "https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92",
+                    text: "Group"
+                }
             },
 
             // Hero Section
@@ -258,6 +266,21 @@ class ContentLoader {
                     title: "Catatan singkat",
                     description: "Proses aktivasi setelah verifikasi pembayaran. Semua kebijakan sesuai FAQ."
                 }
+            },
+
+            // Footer
+            footer: {
+                copyright: "© [year] Branpedia ID — All rights reserved.",
+                links: {
+                    chanel: {
+                        url: "https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H",
+                        text: "Chanel Resmi"
+                    },
+                    group: {
+                        url: "https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92",
+                        text: "Group Komunitas"
+                    }
+                }
             }
         };
     }
@@ -273,6 +296,8 @@ class ContentLoader {
                         ${this.content.nav.menu.map(item => 
                             `<a href="#${item}">${this.capitalizeFirst(item)}</a>`
                         ).join('')}
+                        <a href="${this.content.nav.chanel.url}" target="_blank" rel="noopener" class="chanel-link">${this.content.nav.chanel.text}</a>
+                        <a href="${this.content.nav.group.url}" target="_blank" rel="noopener" class="group-link">${this.content.nav.group.text}</a>
                     </nav>
                     <button id="themeToggle" class="btn ghost small" aria-label="Toggle tema">🌙&nbsp;Dark</button>
                     <button class="hamb" id="hamb" aria-label="Toggle menu" style="display: inline-flex;">
@@ -286,6 +311,8 @@ class ContentLoader {
                 ${this.content.nav.menu.map(item => 
                     `<a href="#${item}" onclick="closeMobile()">${this.capitalizeFirst(item)}</a>`
                 ).join('')}
+                <a href="${this.content.nav.chanel.url}" target="_blank" rel="noopener" onclick="closeMobile()">${this.content.nav.chanel.text}</a>
+                <a href="${this.content.nav.group.url}" target="_blank" rel="noopener" onclick="closeMobile()">${this.content.nav.group.text}</a>
                 <div class="row">
                     <button id="themeToggleMobile" class="btn ghost small" style="width:100%" aria-label="Toggle tema mobile">🌙&nbsp;Dark</button>
                 </div>
@@ -468,7 +495,33 @@ class ContentLoader {
     // Load Footer
     loadFooter() {
         const footerContainer = document.getElementById('footer-container');
-        footerContainer.innerHTML = `© <span id="y">${new Date().getFullYear()}</span> Branpedia ID — All rights reserved.`;
+        const year = new Date().getFullYear();
+        
+        footerContainer.innerHTML = `
+            <div class="container">
+                <div style="text-align:center; margin-bottom:24px;">
+                    <div style="font-size:14px; color:color-mix(in srgb, var(--muted) 88%, #777 12%); margin-bottom:16px;">
+                        ${this.content.footer.copyright.replace('[year]', year)}
+                    </div>
+                    <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+                        <a href="${this.content.footer.links.chanel.url}" target="_blank" rel="noopener" 
+                           style="display:inline-flex; align-items:center; gap:8px; padding:8px 16px; 
+                                  border-radius:999px; background:rgba(157,119,255,.14); 
+                                  border:1px solid var(--border); color:color-mix(in srgb, var(--text) 88%, #fff 12%); 
+                                  font-weight:700; font-size:14px; text-decoration:none; transition:all .2s ease;">
+                            <span>📢</span> ${this.content.footer.links.chanel.text}
+                        </a>
+                        <a href="${this.content.footer.links.group.url}" target="_blank" rel="noopener" 
+                           style="display:inline-flex; align-items:center; gap:8px; padding:8px 16px; 
+                                  border-radius:999px; background:rgba(34,211,238,.14); 
+                                  border:1px solid var(--border); color:color-mix(in srgb, var(--text) 88%, #fff 12%); 
+                                  font-weight:700; font-size:14px; text-decoration:none; transition:all .2s ease;">
+                            <span>💬</span> ${this.content.footer.links.group.text}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
     }
 
     // Utility function
