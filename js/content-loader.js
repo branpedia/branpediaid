@@ -1,5 +1,4 @@
-
-// Content Loader - Memuat semua ya konten secara dinamis
+// Content Loader - Memuat semua konten secara dinamis
 class ContentLoader {
     constructor() {
         this.content = {
@@ -8,11 +7,11 @@ class ContentLoader {
                 brand: "Branpedia ID",
                 menu: ["fitur", "harga", "faq", "testimoni", "kontak"],
                 chanel: {
-                    url: "https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H",
+                    url: "#channel",
                     text: "Chanel"
                 },
                 group: {
-                    url: "https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92",
+                    url: "#group",
                     text: "Group"
                 }
             },
@@ -274,11 +273,11 @@ class ContentLoader {
                 copyright: "© [year] Branpedia ID — All rights reserved.",
                 links: {
                     chanel: {
-                        url: "https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H",
+                        url: "#channel",
                         text: "Chanel Resmi"
                     },
                     group: {
-                        url: "https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92",
+                        url: "#group",
                         text: "Group Komunitas"
                     }
                 }
@@ -297,8 +296,8 @@ class ContentLoader {
                         ${this.content.nav.menu.map(item => 
                             `<a href="#${item}">${this.capitalizeFirst(item)}</a>`
                         ).join('')}
-                        <a href="${this.content.nav.chanel.url}" target="_blank" rel="noopener" class="chanel-link">${this.content.nav.chanel.text}</a>
-                        <a href="${this.content.nav.group.url}" target="_blank" rel="noopener" class="group-link">${this.content.nav.group.text}</a>
+                        <a href="${this.content.nav.chanel.url}" class="chanel-link">${this.content.nav.chanel.text}</a>
+                        <a href="${this.content.nav.group.url}" class="group-link">${this.content.nav.group.text}</a>
                     </nav>
                     <button id="themeToggle" class="btn ghost small" aria-label="Toggle tema">🌙&nbsp;Dark</button>
                     <button class="hamb" id="hamb" aria-label="Toggle menu" style="display: inline-flex;">
@@ -312,8 +311,8 @@ class ContentLoader {
                 ${this.content.nav.menu.map(item => 
                     `<a href="#${item}" onclick="closeMobile()">${this.capitalizeFirst(item)}</a>`
                 ).join('')}
-                <a href="${this.content.nav.chanel.url}" target="_blank" rel="noopener" onclick="closeMobile()">${this.content.nav.chanel.text}</a>
-                <a href="${this.content.nav.group.url}" target="_blank" rel="noopener" onclick="closeMobile()">${this.content.nav.group.text}</a>
+                <a href="${this.content.nav.chanel.url}" onclick="closeMobile()">${this.content.nav.chanel.text}</a>
+                <a href="${this.content.nav.group.url}" onclick="closeMobile()">${this.content.nav.group.text}</a>
                 <div class="row">
                     <button id="themeToggleMobile" class="btn ghost small" style="width:100%" aria-label="Toggle tema mobile">🌙&nbsp;Dark</button>
                 </div>
@@ -505,14 +504,14 @@ class ContentLoader {
                         ${this.content.footer.copyright.replace('[year]', year)}
                     </div>
                     <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
-                        <a href="${this.content.footer.links.chanel.url}" target="_blank" rel="noopener" 
+                        <a href="${this.content.footer.links.chanel.url}" 
                            style="display:inline-flex; align-items:center; gap:8px; padding:8px 16px; 
                                   border-radius:999px; background:rgba(157,119,255,.14); 
                                   border:1px solid var(--border); color:color-mix(in srgb, var(--text) 88%, #fff 12%); 
                                   font-weight:700; font-size:14px; text-decoration:none; transition:all .2s ease;">
                             <span>📢</span> ${this.content.footer.links.chanel.text}
                         </a>
-                        <a href="${this.content.footer.links.group.url}" target="_blank" rel="noopener" 
+                        <a href="${this.content.footer.links.group.url}" 
                            style="display:inline-flex; align-items:center; gap:8px; padding:8px 16px; 
                                   border-radius:999px; background:rgba(34,211,238,.14); 
                                   border:1px solid var(--border); color:color-mix(in srgb, var(--text) 88%, #fff 12%); 
