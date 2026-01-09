@@ -5,15 +5,7 @@ class ContentLoader {
             // Navigation
             nav: {
                 brand: "Branpedia ID",
-                menu: ["fitur", "harga", "faq", "testimoni", "kontak"],
-                chanel: {
-                    url: "#channel",
-                    text: "Chanel"
-                },
-                group: {
-                    url: "#group",
-                    text: "Group"
-                }
+                menu: ["fitur", "harga", "faq", "testimoni", "kontak"]
             },
 
             // Hero Section
@@ -272,13 +264,20 @@ class ContentLoader {
             footer: {
                 copyright: "© [year] Branpedia ID — All rights reserved.",
                 links: {
-                    chanel: {
-                        url: "#channel",
-                        text: "Chanel Resmi"
+                    owner: {
+                        url: "#owner",
+                        text: "👤 Owner",
+                        class: "owner"
                     },
                     group: {
                         url: "#group",
-                        text: "Group Komunitas"
+                        text: "💬 Group Komunitas",
+                        class: "group"
+                    },
+                    chanel: {
+                        url: "#channel",
+                        text: "📢 Chanel Resmi",
+                        class: "chanel"
                     }
                 }
             }
@@ -296,8 +295,6 @@ class ContentLoader {
                         ${this.content.nav.menu.map(item => 
                             `<a href="#${item}">${this.capitalizeFirst(item)}</a>`
                         ).join('')}
-                        <a href="${this.content.nav.chanel.url}" class="chanel-link">${this.content.nav.chanel.text}</a>
-                        <a href="${this.content.nav.group.url}" class="group-link">${this.content.nav.group.text}</a>
                     </nav>
                     <button id="themeToggle" class="btn ghost small" aria-label="Toggle tema">🌙&nbsp;Dark</button>
                     <button class="hamb" id="hamb" aria-label="Toggle menu" style="display: inline-flex;">
@@ -311,8 +308,6 @@ class ContentLoader {
                 ${this.content.nav.menu.map(item => 
                     `<a href="#${item}" onclick="closeMobile()">${this.capitalizeFirst(item)}</a>`
                 ).join('')}
-                <a href="${this.content.nav.chanel.url}" onclick="closeMobile()">${this.content.nav.chanel.text}</a>
-                <a href="${this.content.nav.group.url}" onclick="closeMobile()">${this.content.nav.group.text}</a>
                 <div class="row">
                     <button id="themeToggleMobile" class="btn ghost small" style="width:100%" aria-label="Toggle tema mobile">🌙&nbsp;Dark</button>
                 </div>
@@ -503,20 +498,15 @@ class ContentLoader {
                     <div style="font-size:14px; color:color-mix(in srgb, var(--muted) 88%, #777 12%); margin-bottom:16px;">
                         ${this.content.footer.copyright.replace('[year]', year)}
                     </div>
-                    <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
-                        <a href="${this.content.footer.links.chanel.url}" 
-                           style="display:inline-flex; align-items:center; gap:8px; padding:8px 16px; 
-                                  border-radius:999px; background:rgba(157,119,255,.14); 
-                                  border:1px solid var(--border); color:color-mix(in srgb, var(--text) 88%, #fff 12%); 
-                                  font-weight:700; font-size:14px; text-decoration:none; transition:all .2s ease;">
-                            <span>📢</span> ${this.content.footer.links.chanel.text}
+                    <div class="footer-links">
+                        <a href="${this.content.footer.links.owner.url}" class="footer-link ${this.content.footer.links.owner.class}">
+                            ${this.content.footer.links.owner.text}
                         </a>
-                        <a href="${this.content.footer.links.group.url}" 
-                           style="display:inline-flex; align-items:center; gap:8px; padding:8px 16px; 
-                                  border-radius:999px; background:rgba(34,211,238,.14); 
-                                  border:1px solid var(--border); color:color-mix(in srgb, var(--text) 88%, #fff 12%); 
-                                  font-weight:700; font-size:14px; text-decoration:none; transition:all .2s ease;">
-                            <span>💬</span> ${this.content.footer.links.group.text}
+                        <a href="${this.content.footer.links.group.url}" class="footer-link ${this.content.footer.links.group.class}">
+                            ${this.content.footer.links.group.text}
+                        </a>
+                        <a href="${this.content.footer.links.chanel.url}" class="footer-link ${this.content.footer.links.chanel.class}">
+                            ${this.content.footer.links.chanel.text}
                         </a>
                     </div>
                 </div>
