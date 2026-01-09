@@ -1,7 +1,7 @@
 // Main JavaScript - Fungsi interaktif dengan hash redirect
 document.addEventListener('DOMContentLoaded', function() {
-    // Cek dan handle redirect berdasarkan hash URL
-    handleHashRedirects();
+    // Cek dan handle redirect berdasarkan pathname atau hash URL
+    handleAllRedirects();
     
     // Init year - PERBAIKI ERROR: Hanya set jika element ada
     const yearElement = document.getElementById('y');
@@ -86,12 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault(); 
                 
                 // Cek apakah ini redirect link (group/channel/owner)
-                const redirectUrls = {
-                    '#group': 'https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92',
-                    '#channel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
-                    '#chanel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
-                    '#owner': 'https://api.whatsapp.com/send/?phone=6285795600265&text&type=phone_number&app_absent=0&wame_ctl=1'
-                };
+                const redirectUrls = getRedirectUrls();
                 
                 if (redirectUrls[href.toLowerCase()]) {
                     // Langsung redirect tanpa loading
@@ -153,30 +148,55 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Function to handle hash redirects - LANGSUNG REDIRECT TANPA LOADING
-function handleHashRedirects() {
-    const hash = window.location.hash;
-    const redirects = {
+// Function to get all redirect URLs
+function getRedirectUrls() {
+    return {
         '#group': 'https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92',
         '#channel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
         '#chanel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
-        '#owner': 'https://api.whatsapp.com/send/?phone=6285795600265&text&type=phone_number&app_absent=0&wame_ctl=1'
+        '#owner': 'https://api.whatsapp.com/send/?phone=6285795600265&text&type=phone_number&app_absent=0&wame_ctl=1',
+        '/group': 'https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92',
+        '/channel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
+        '/chanel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
+        '/owner': 'https://api.whatsapp.com/send/?phone=6285795600265&text&type=phone_number&app_absent=0&wame_ctl=1'
     };
+}
+
+// Function to handle all redirects - support both hash and pathname
+function handleAllRedirects() {
+    const path = window.location.pathname; // /group, /channel, /owner
+    const hash = window.location.hash; // #group, #channel, #owner
     
+    const redirects = getRedirectUrls();
+    
+    // Cek pathname dulu (misal: /group)
+    if (path && path !== '/' && redirects[path]) {
+        // Langsung redirect tanpa delay
+        window.location.href = redirects[path];
+        return true;
+    }
+    
+    // Cek hash (misal: #group)
     if (hash && redirects[hash.toLowerCase()]) {
         // Langsung redirect tanpa delay
         window.location.href = redirects[hash.toLowerCase()];
         return true;
     }
+    
     return false;
 }
 
 // Juga handle hash changes (jika user mengubah hash secara manual)
 window.addEventListener('hashchange', function() {
-    handleHashRedirects();
+    handleAllRedirects();
 });
 
-// Handle jika page di-load dengan hash
+// Handle jika page di-load
 window.addEventListener('load', function() {
-    handleHashRedirects();
+    handleAllRedirects();
+});
+
+// Handle popstate (untuk browser back/forward)
+window.addEventListener('popstate', function() {
+    handleAllRedirects();
 });
