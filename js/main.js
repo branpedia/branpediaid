@@ -1,12 +1,13 @@
 // Main JavaScript - Fungsi interaktif dengan hash redirect
 document.addEventListener('DOMContentLoaded', function() {
     // Cek dan handle redirect berdasarkan hash URL
-    if (handleHashRedirects()) {
-        return; // Jika ada redirect, hentikan eksekusi kode lainnya
-    }
+    handleHashRedirects();
     
-    // Init year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Init year - PERBAIKI ERROR: Hanya set jika element ada
+    const yearElement = document.getElementById('y');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 
     // Theme persistence
     const root = document.documentElement;
@@ -22,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function syncToggleLabels() {
         const cur = root.getAttribute('data-theme');
-        toggleBtns.forEach(b => b.textContent = (cur === 'light') ? '🌙\u00A0Dark' : '☀️\u00A0Light');
+        toggleBtns.forEach(b => {
+            if (b) b.textContent = (cur === 'light') ? '🌙\u00A0Dark' : '☀️\u00A0Light';
+        });
     }
     syncToggleLabels();
 
@@ -82,12 +85,21 @@ document.addEventListener('DOMContentLoaded', function() {
             if (href.length > 1) { 
                 e.preventDefault(); 
                 
-                // Cek apakah ini redirect link (group/channel)
-                if (href === '#group' || href === '#channel' || href === '#chanel') {
-                    // Biarkan link default yang sudah ada di content-loader.js
+                // Cek apakah ini redirect link (group/channel/owner)
+                const redirectUrls = {
+                    '#group': 'https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92',
+                    '#channel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
+                    '#chanel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
+                    '#owner': 'https://api.whatsapp.com/send/?phone=6285795600265&text&type=phone_number&app_absent=0&wame_ctl=1'
+                };
+                
+                if (redirectUrls[href.toLowerCase()]) {
+                    // Langsung redirect tanpa loading
+                    window.location.href = redirectUrls[href.toLowerCase()];
                     return;
                 }
                 
+                // Jika bukan redirect, lakukan smooth scroll biasa
                 closeMobile(); 
                 smoothTo(href); 
                 history.pushState(null, '', href); 
@@ -141,42 +153,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Function to handle hash redirects
+// Function to handle hash redirects - LANGSUNG REDIRECT TANPA LOADING
 function handleHashRedirects() {
     const hash = window.location.hash;
     const redirects = {
         '#group': 'https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92',
         '#channel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
-        '#chanel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H'
+        '#chanel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
+        '#owner': 'https://api.whatsapp.com/send/?phone=6285795600265&text&type=phone_number&app_absent=0&wame_ctl=1'
     };
     
     if (hash && redirects[hash.toLowerCase()]) {
-        // Tampilkan loading screen
-        showRedirectLoading(redirects[hash.toLowerCase()]);
+        // Langsung redirect tanpa delay
+        window.location.href = redirects[hash.toLowerCase()];
         return true;
     }
     return false;
-}
-
-// Function to show redirect loading
-function showRedirectLoading(url) {
-    // Buat elemen loading
-    const loadingDiv = document.createElement('div');
-    loadingDiv.id = 'redirect-loading';
-    loadingDiv.innerHTML = `
-        <div class="loading-spinner"></div>
-        <h2 style="margin-bottom: 10px;">Mengalihkan...</h2>
-        <p style="color: var(--muted); text-align: center; max-width: 300px;">
-            Anda akan dialihkan ke WhatsApp dalam beberapa detik
-        </p>
-    `;
-    
-    document.body.appendChild(loadingDiv);
-    
-    // Redirect setelah 1.5 detik (untuk efek loading)
-    setTimeout(() => {
-        window.location.href = url;
-    }, 1500);
 }
 
 // Juga handle hash changes (jika user mengubah hash secara manual)
@@ -186,8 +178,5 @@ window.addEventListener('hashchange', function() {
 
 // Handle jika page di-load dengan hash
 window.addEventListener('load', function() {
-    // Cek hash setelah semua konten dimuat
-    setTimeout(() => {
-        handleHashRedirects();
-    }, 100);
+    handleHashRedirects();
 });
