@@ -1,5 +1,10 @@
-// Main JavaScript - Fungsi interaktif
+// Main JavaScript - Fungsi interaktif dengan hash redirect
 document.addEventListener('DOMContentLoaded', function() {
+    // Cek dan handle redirect berdasarkan hash URL
+    if (handleHashRedirects()) {
+        return; // Jika ada redirect, hentikan eksekusi kode lainnya
+    }
+    
     // Init year
     document.getElementById('y').textContent = new Date().getFullYear();
 
@@ -70,11 +75,19 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top, behavior: 'smooth' });
     }
 
+    // Handle internal anchor links
     document.addEventListener('click', function(e) {
         if (e.target.matches('a[href^="#"]')) {
             const href = e.target.getAttribute('href');
             if (href.length > 1) { 
                 e.preventDefault(); 
+                
+                // Cek apakah ini redirect link (group/channel)
+                if (href === '#group' || href === '#channel' || href === '#chanel') {
+                    // Biarkan link default yang sudah ada di content-loader.js
+                    return;
+                }
+                
                 closeMobile(); 
                 smoothTo(href); 
                 history.pushState(null, '', href); 
@@ -126,4 +139,55 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+});
+
+// Function to handle hash redirects
+function handleHashRedirects() {
+    const hash = window.location.hash;
+    const redirects = {
+        '#group': 'https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92',
+        '#channel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
+        '#chanel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H'
+    };
+    
+    if (hash && redirects[hash.toLowerCase()]) {
+        // Tampilkan loading screen
+        showRedirectLoading(redirects[hash.toLowerCase()]);
+        return true;
+    }
+    return false;
+}
+
+// Function to show redirect loading
+function showRedirectLoading(url) {
+    // Buat elemen loading
+    const loadingDiv = document.createElement('div');
+    loadingDiv.id = 'redirect-loading';
+    loadingDiv.innerHTML = `
+        <div class="loading-spinner"></div>
+        <h2 style="margin-bottom: 10px;">Mengalihkan...</h2>
+        <p style="color: var(--muted); text-align: center; max-width: 300px;">
+            Anda akan dialihkan ke WhatsApp dalam beberapa detik
+        </p>
+    `;
+    
+    document.body.appendChild(loadingDiv);
+    
+    // Redirect setelah 1.5 detik (untuk efek loading)
+    setTimeout(() => {
+        window.location.href = url;
+    }, 1500);
+}
+
+// Juga handle hash changes (jika user mengubah hash secara manual)
+window.addEventListener('hashchange', function() {
+    handleHashRedirects();
+});
+
+// Handle jika page di-load dengan hash
+window.addEventListener('load', function() {
+    // Cek hash setelah semua konten dimuat
+    setTimeout(() => {
+        handleHashRedirects();
+    }, 100);
 });
