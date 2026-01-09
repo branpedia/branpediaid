@@ -262,24 +262,7 @@ class ContentLoader {
 
             // Footer
             footer: {
-                copyright: "© [year] Branpedia ID — All rights reserved.",
-                links: {
-                    owner: {
-                        url: "#owner",
-                        text: "👤 Owner",
-                        class: "owner"
-                    },
-                    group: {
-                        url: "#group",
-                        text: "💬 Group Komunitas",
-                        class: "group"
-                    },
-                    chanel: {
-                        url: "#channel",
-                        text: "📢 Chanel Resmi",
-                        class: "chanel"
-                    }
-                }
+                copyright: "© [year] Branpedia ID — All rights reserved."
             }
         };
     }
@@ -487,7 +470,7 @@ class ContentLoader {
         `;
     }
 
-    // Load Footer
+    // Load Footer (TANPA LINKS)
     loadFooter() {
         const footerContainer = document.getElementById('footer-container');
         const year = new Date().getFullYear();
@@ -495,19 +478,8 @@ class ContentLoader {
         footerContainer.innerHTML = `
             <div class="container">
                 <div style="text-align:center; margin-bottom:24px;">
-                    <div style="font-size:14px; color:color-mix(in srgb, var(--muted) 88%, #777 12%); margin-bottom:16px;">
+                    <div style="font-size:14px; color:color-mix(in srgb, var(--muted) 88%, #777 12%);">
                         ${this.content.footer.copyright.replace('[year]', year)}
-                    </div>
-                    <div class="footer-links">
-                        <a href="${this.content.footer.links.owner.url}" class="footer-link ${this.content.footer.links.owner.class}">
-                            ${this.content.footer.links.owner.text}
-                        </a>
-                        <a href="${this.content.footer.links.group.url}" class="footer-link ${this.content.footer.links.group.class}">
-                            ${this.content.footer.links.group.text}
-                        </a>
-                        <a href="${this.content.footer.links.chanel.url}" class="footer-link ${this.content.footer.links.chanel.class}">
-                            ${this.content.footer.links.chanel.text}
-                        </a>
                     </div>
                 </div>
             </div>
