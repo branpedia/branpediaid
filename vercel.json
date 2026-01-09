@@ -1,0 +1,43 @@
+{
+  "rewrites": [
+    {
+      "source": "/group",
+      "destination": "/#group"
+    },
+    {
+      "source": "/channel",
+      "destination": "/#channel"
+    },
+    {
+      "source": "/chanel",
+      "destination": "/#chanel"
+    },
+    {
+      "source": "/owner",
+      "destination": "/#owner"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}
