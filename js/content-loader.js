@@ -83,7 +83,7 @@ class ContentLoader {
                             title: "VIP (Sewa Bot Grup)",
                             desc: "Untuk 1 grup",
                             badge: "Populer",
-                            price: "30K",
+                            price: "15K",
                             period: "/ bulan",
                             features: [
                                 "Semua anggota grup bisa pakai",
