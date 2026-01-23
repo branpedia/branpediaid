@@ -135,7 +135,7 @@ class ContentLoader {
                             cta: "https://wa.me/6285795600265?text=!premium"
                         },
                         {
-                            title: "VVIP Grup (Jadibot Reguler)",
+                            title: "KVIP Grup (Jadibot Reguler)",
                             desc: "Alternatif hemat",
                             badge: "Reguler",
                             price: "25K",
