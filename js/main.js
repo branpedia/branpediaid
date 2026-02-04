@@ -150,33 +150,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Function to get all redirect URLs
 function getRedirectUrls() {
+    const baseChannelUrl = 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H';
+    
     return {
+        // Hash URLs
         '#group': 'https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92',
-        '#channel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
-        '#chanel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
+        '#channel': baseChannelUrl,
+        '#chanel': baseChannelUrl,
         '#owner': 'https://api.whatsapp.com/send/?phone=6285795600265&text&type=phone_number&app_absent=0&wame_ctl=1',
+        
+        // Path URLs
         '/group': 'https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92',
-        '/channel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
-        '/chanel': 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H',
-        '/owner': 'https://api.whatsapp.com/send/?phone=6285795600265&text&type=phone_number&app_absent=0&wame_ctl=1'
+        '/channel': baseChannelUrl,
+        '/chanel': baseChannelUrl,
+        '/owner': 'https://api.whatsapp.com/send/?phone=6285795600265&text&type=phone_number&app_absent=0&wame_ctl=1',
+        
+        // Channel v2 URLs (short version)
+        '/ch': baseChannelUrl,
+        '#ch': baseChannelUrl
     };
 }
 
 // Function to handle all redirects - support both hash and pathname
 function handleAllRedirects() {
-    const path = window.location.pathname; // /group, /channel, /owner
-    const hash = window.location.hash; // #group, #channel, #owner
+    const path = window.location.pathname; // /group, /channel, /owner, /ch
+    const hash = window.location.hash; // #group, #channel, #owner, #ch
+    
+    // Dapatkan parameter tambahan jika ada (misal: /ch/5878)
+    const pathSegments = path.split('/').filter(segment => segment !== '');
     
     const redirects = getRedirectUrls();
     
-    // Cek pathname dulu (misal: /group)
+    // Handle channel v2 dengan parameter (misal: /ch/5878)
+    if (pathSegments.length > 0) {
+        const mainPath = '/' + pathSegments[0]; // /ch
+        const param = pathSegments[1]; // 5878
+        
+        // Cek apakah ini URL channel v2 dengan parameter
+        if ((mainPath === '/ch' || mainPath === '/chanel' || mainPath === '/channel') && param) {
+            const baseUrl = redirects['/ch'] || 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H';
+            // Redirect ke URL dengan parameter tambahan
+            window.location.href = `${baseUrl}/${param}`;
+            return true;
+        }
+    }
+    
+    // Cek pathname dulu (misal: /group, /ch, /chanel)
     if (path && path !== '/' && redirects[path]) {
         // Langsung redirect tanpa delay
         window.location.href = redirects[path];
         return true;
     }
     
-    // Cek hash (misal: #group)
+    // Cek hash (misal: #group, #ch)
     if (hash && redirects[hash.toLowerCase()]) {
         // Langsung redirect tanpa delay
         window.location.href = redirects[hash.toLowerCase()];
