@@ -178,14 +178,14 @@ class ContentLoader {
                         comment: "Sangat puas. Dari banyak bot yang saya coba, ini paling membantu dan simpel. Menjawab semua pertanyaan saya—<b>terbaik!</b>"
                     },
                     {
-                        name: "Rayy",
+                        name: "Echa",
                         location: "Bandung, Indonesia",
                         rating: "★★★★☆ 4.9",
                         avatar: "/assets/masha2.png",
                         comment: "Bermanfaat banget. Banyak fitur yang bantu kerjaan. <b>Hanya 10 ribu/bulan</b> bisa coba semua fitur tanpa batasan limit. Sukses selalu!"
                     },
                     {
-                        name: "Augusto",
+                        name: "Shinee",
                         location: "Jakarta, Indonesia",
                         rating: "★★★★★ 5.0",
                         avatar: "/assets/gusto.jpeg",
