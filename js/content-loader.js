@@ -48,7 +48,7 @@ class ContentLoader {
                                 "Limit penggunaan <b>unlimited</b>",
                                 "Tetap aktif meski bot ganti nomor"
                             ],
-                            cta: "https://wa.me/6285795600265?text=!premium"
+                            cta: "https://wa.me/62895622375098?text=!premium"
                         },
                         {
                             title: "Premium 3 Bulan",
@@ -62,7 +62,7 @@ class ContentLoader {
                                 "Tanpa repot perpanjang tiap bulan",
                                 "Support prioritas"
                             ],
-                            cta: "https://wa.me/6285795600265?text=!premium"
+                            cta: "https://wa.me/62895622375098?text=!premium"
                         },
                         {
                             title: "Premium Permanen",
@@ -75,7 +75,7 @@ class ContentLoader {
                                 "Tidak hilang ketika bot ganti nomor",
                                 "Tidak dapat dipindahkan ke nomor lain"
                             ],
-                            cta: "https://wa.me/6285795600265?text=!premium"
+                            cta: "https://wa.me/62895622375098?text=!premium"
                         }
                     ],
                     sewa: [
@@ -90,7 +90,7 @@ class ContentLoader {
                                 "Limit harian per anggota",
                                 "Moderasi + proteksi grup"
                             ],
-                            cta: "https://wa.me/6285795600265?text=!premium"
+                            cta: "https://wa.me/62895622375098?text=!premium"
                         },
                         {
                             title: "VVIP (Sewa Bot Grup)",
@@ -104,7 +104,7 @@ class ContentLoader {
                                 "Limit <b>unlimited</b>",
                                 "Prioritas antrian"
                             ],
-                            cta: "https://wa.me/6285795600265?text=!premium"
+                            cta: "https://wa.me/62895622375098?text=!premium"
                         }
                     ],
                     jadibot: [
@@ -119,7 +119,7 @@ class ContentLoader {
                                 "Respon standar & stabil",
                                 "Tanggung risiko banned oleh WhatsApp"
                             ],
-                            cta: "https://wa.me/6285795600265?text=!premium"
+                            cta: "https://wa.me/62895622375098?text=!premium"
                         },
                         {
                             title: "VVIP Grup (Jadibot Exclusive)",
@@ -132,7 +132,7 @@ class ContentLoader {
                                 "Prioritas resource",
                                 "Support lebih sigap"
                             ],
-                            cta: "https://wa.me/6285795600265?text=!premium"
+                            cta: "https://wa.me/62895622375098?text=!premium"
                         },
                         {
                             title: "KVIP Grup (Jadibot Reguler)",
@@ -145,7 +145,7 @@ class ContentLoader {
                                 "Performa reguler",
                                 "Kebijakan sama seperti Reguler"
                             ],
-                            cta: "https://wa.me/6285795600265?text=!premium"
+                            cta: "https://wa.me/62895622375098?text=!premium"
                         }
                     ]
                 }
