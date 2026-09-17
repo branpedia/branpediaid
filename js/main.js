@@ -150,20 +150,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Function to get all redirect URLs
 function getRedirectUrls() {
-    const baseChannelUrl = 'https://whatsapp.com/channel/0029VaR0ejN47Xe26WUarL3H';
+    const baseChannelUrl = 'https://whatsapp.com/channel/0029VbDf8THHQbS1VdEcKo2P/100';
     
     return {
         // Hash URLs
-        '#group': 'https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92',
+        '#group': 'https://chat.whatsapp.com/IMvLtFRymW5IxnAjKWLDxS',
         '#channel': baseChannelUrl,
         '#chanel': baseChannelUrl,
-        '#owner': 'https://api.whatsapp.com/send/?phone=6285795600265&text&type=phone_number&app_absent=0&wame_ctl=1',
+        '#owner': 'https://api.whatsapp.com/send/?phone=62895622375098&text&type=phone_number&app_absent=0&wame_ctl=1',
         
         // Path URLs
-        '/group': 'https://chat.whatsapp.com/E75NYG8eKvyEXk6QtFtj92',
+        '/group': 'https://chat.whatsapp.com/IMvLtFRymW5IxnAjKWLDxS',
         '/channel': baseChannelUrl,
         '/chanel': baseChannelUrl,
-        '/owner': 'https://api.whatsapp.com/send/?phone=6285795600265&text&type=phone_number&app_absent=0&wame_ctl=1',
+        '/owner': 'https://api.whatsapp.com/send/?phone=62895622375098&text&type=phone_number&app_absent=0&wame_ctl=1',
         
         // Channel v2 URLs (short version)
         '/ch': baseChannelUrl,
